@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <meta charset="utf-8" />
 		<title>Kim a so-so developer</title>
 		<!-- link to main stylesheet -->
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        <style>
+            body { margin:0; padding:0; }
+            #map { position:absolute; top:0; bottom:0; width:100%; }
+        </style>
 	</head>
 	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
 		<div class="container">
     		<div class="blurb">
         		<h1>Hi there, I'm Kim</h1>
 				<p>I'm just trying out mapbox for web here</p>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
-
+        <div id='map'></div>
+        <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWRndWFuIiwiYSI6ImNpcG50N2s4NDAwNGRmbG5jeXZtMHkxMW4ifQ.ubiXybBxhpidF83H-Zvz7Q';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [0, 0],
+        zoom: 2
+    });
+        </script>
 	</body>
 </html>
