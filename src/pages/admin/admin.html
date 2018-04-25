@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="ios-menu-outline"></ion-icon>
+    </button>
+    <ion-title>Admin Dashboard</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="alt-bg">
+
+  <ion-list no-lines class="border-bottom">
+
+    <button ion-item (click)="manageTimesheets()">
+      <ion-avatar item-left>
+        <img src="assets/images/tab_clockin.svg">
+      </ion-avatar>
+      <h2>Timesheets</h2>
+      <p>Last updated: 2 Jun, 12:05pm</p>
+      <ion-note item-right>
+        <span class="badge-no">2</span>
+      </ion-note>
+    </button>
+
+    <button ion-item (click)="manageLeaves()">
+      <ion-avatar item-left>
+        <img src="assets/images/tab_timesheet.svg">
+      </ion-avatar>
+      <h2>Leave Applications</h2>
+      <p>Last updated: 29 May, 2:58pm</p>
+      <ion-note item-right>
+        <span class="badge-no">2</span>
+      </ion-note>
+    </button>
+
+    <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/tab_expense.svg">
+      </ion-avatar>
+      <h2>Claim Applications</h2>
+      <p>Last updated: 1 Jun, 1:32pm</p>
+      <ion-note item-right>
+        <span class="badge-no">2</span>
+      </ion-note>
+    </button>
+
+  </ion-list>
+
+</ion-content>

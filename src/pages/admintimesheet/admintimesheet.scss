@@ -1,0 +1,41 @@
+page-admintimesheet {
+  .list h2 {
+    font-weight: 500;
+  }
+  h3,
+  .label p {
+    font-size: 1.3rem;
+    color: color($colors, dark-grey);
+  }
+  .item-block {
+    padding: 4px 0 5px 16px;
+  }
+  .item.item-ios .checkbox-ios {
+    position: absolute;
+    top: 25px;
+    left: 22px;
+  } // .scroll-content {
+  //   overflow: hidden;
+  // }
+  .scrollable {
+    height: calc(100vh - 200px);
+  }
+  .select-all {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: color($colors, dark-grey);
+    height: 40px;
+    .checkbox {
+      top: 5px;
+      padding: 0 15px 0 13px;
+    }
+  }
+  .selected {
+    text-align: right;
+    padding: 7px 5px 0 0;
+    color: color($colors, main-blue);
+  }
+  .toggle-footer {
+    height: 113px;
+  }
+}

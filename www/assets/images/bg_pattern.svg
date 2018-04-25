@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="63px" viewBox="0 0 42 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>bg_Pattern</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="iStaff-Apps" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="bg_Pattern" stroke="#42B0CE" stroke-width="0.5">
+            <polyline id="Line" points="-1.5 0 41.5 15.5 41.5 63.0026315"></polyline>
+            <polyline id="Line-Copy-7" points="-22.5 31.5 20.5 47 20.5 94.5026315"></polyline>
+            <path d="M20.5,-0.5 L20.5,31.5" id="Line-Copy-2"></path>
+            <path d="M-0.5,-1.57772181e-30 L42.5,15.5" id="Line-Copy" transform="translate(21.000000, 7.750000) scale(-1, 1) translate(-21.000000, -7.750000) "></path>
+            <path d="M41.5,-1.57772181e-30 L84.5,15.5" id="Line-Copy-4" transform="translate(63.000000, 7.750000) scale(-1, 1) translate(-63.000000, -7.750000) "></path>
+            <path d="M-21,31.9 L20.5332979,46.5" id="Line-Copy-3" transform="translate(-0.233351, 39.200000) scale(-1, 1) translate(0.233351, -39.200000) "></path>
+            <polyline id="Line-Copy-6" points="20.5086055 31.8635671 62.5 47 62.5 94.5026315"></polyline>
+            <path d="M20.5,31.5 L63.5,47" id="Line-Copy-5" transform="translate(42.000000, 39.250000) scale(-1, 1) translate(-42.000000, -39.250000) "></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,201 @@
+page-timesheet {
+  .list {
+    margin-bottom: 0 !important;
+  }
+  .listing.edit-timeline {
+    .project-item {
+      border-bottom: 1px solid color($colors, grey-line);
+      padding-top: 6px;
+      padding-bottom: 6px;
+    } // .project-item:last-child {
+    //   border-bottom: 0;
+    // }
+    .title {
+      font-size: 1.4rem;
+    }
+    .timeline-item.active {
+      .project-item {
+        border-bottom: 0;
+      }
+      .with-expand-collapse .ion-ios-arrow-down:before {
+        content: "\f3d8" !important;
+      }
+    }
+    .with-expand-collapse {
+      label {
+        padding-right: 7px;
+        vertical-align: top;
+        color: color($colors, dark-grey);
+      }
+      ion-icon {
+        color: color($colors, asher-grey);
+      }
+    }
+    .activity-item {
+      .item-block {
+        color: color($colors, dark-grey);
+        font-size: 1.4rem;
+        width: calc(100% - 55px);
+        float: left;
+      }
+      .icon-btn.close {
+        float: left;
+        height: 37px;
+        padding-left: 10px;
+      }
+      .title.label {
+        margin: 0;
+      } // .icon-btn {
+      //   width: 28px;
+      //   height: 28px;
+      // div {
+      //   display: inline-block;
+      // }
+      // .title {
+      //   width: calc(100vw - 165px);
+      //   padding: 10px 0 0 65px;
+      // }
+      // .edit-hours {
+      //   float: right;
+      //   .icon-btn {
+      //     width: 35px;
+      //     height: 35px;
+      //     margin: -13px 0 0 0;
+      //     ion-icon {
+      //       font-size: 2.2rem;
+      //     }
+      //   }
+      // }
+      // .hours-input {
+      //   ion-input {
+      //     display: inline-block;
+      //     width: 25px;
+      //     text-align: center;
+      //     input {
+      //       text-align: center;
+      //       margin: 10px 0;
+      //     }
+      //   }
+      // }
+    }
+    .icon-btn.clear ion-icon {
+      color: color($colors, asher-grey);
+    }
+    .activity-button {
+      border-bottom: 1px solid color($colors, grey-line) !important;
+      padding: 10px 16px;
+      button {
+        height: 40px;
+      }
+    }
+    .buttons-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  .buttons-wrapper.bottom {
+    border-top: 1px solid color($colors, grey-line);
+    padding: 10px 12px 1px 12px;
+    background: #fff;
+  }
+  .monthly-activities .right-text {
+    padding-top: 0;
+  }
+  .journey-map {
+    overflow: hidden;
+    height: 205px;
+    position: relative;
+    button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  ion-footer {
+    bottom: 49px;
+    background: white;
+  }
+  .calendar-week {
+    background: #14a5cc;
+  }
+  .scrollable {
+    overflow: scroll;
+    height: calc(100vh - 340px);
+  }
+  .scrollable2 {
+    overflow: scroll;
+    height: calc(100vh - 263px);
+  }
+  .toggle-monthly {
+    margin-top: -600px;
+    .calendar-wrapper {
+      background-color: #14a5cc;
+      padding-top: 600px;
+      .calendar-week {
+        padding-bottom: 10px; // margin-top: -600px;
+        // padding-top: 600px;
+        .day-btn {
+          height: 53px;
+        }
+      }
+    }
+  }
+  .scroll-content {
+    overflow: hidden;
+  }
+  .toggle-monthly {
+    overflow: scroll;
+    height: calc(100vh - 160px + 600px);
+    .day-btn.active {
+      background: none !important;
+      opacity: 1 !important;
+    }
+  }
+  .scrollable {
+    .item-block {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+  } // .scrollable2 + div + div .project-item:last-child {
+  //   border-bottom: 0;
+  // }
+  .buttons-wrapper.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  } // ion-header>.toolbar.statusbar-padding:first-child ion-segment {
+  //   padding-top: 0 !important;
+  //   min-height: auto !important;
+  //   height: auto !important;
+  // } //   .text-input-ios {
+  //   padding: 0 !important;
+  //   margin: 11px 8px 11px 0 !important;
+  // }
+  .datetime-ios {
+    margin-right: 24px;
+  }
+  .datetime-text:empty:not(:focus):before {
+    content: "0:00";
+  }
+  .datetime-ios:after {
+    content: " hrs";
+    padding-left: 5px;
+    padding-right: 2px;
+  }
+  ion-header ion-segment {
+    padding-right: 34px;
+  }
+  .list.border-bottom .item-block:last-child {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .bg-timeline {
+    background-color: #fff;
+  }
+}
+
+.save-timesheet.action-sheet-ios .action-sheet-title {
+  font-size: 1.8rem !important;
+}

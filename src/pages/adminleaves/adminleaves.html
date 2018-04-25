@@ -1,0 +1,94 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="ios-menu-outline"></ion-icon>
+    </button>
+
+    <ion-segment [(ngModel)]="leaves_admin">
+      <ion-segment-button value="leaves">
+        Leaves
+      </ion-segment-button>
+      <ion-segment-button value="report">
+        Report
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="alt-bg">
+
+
+  <div [ngSwitch]="leaves_admin">
+    <div *ngSwitchCase="'leaves'">
+      <div class="in-progress">
+        <img src="assets/images/svg_inprogress.svg">
+        <div>This page is under construction</div>
+      </div>
+
+      <!--<ion-searchbar></ion-searchbar>
+
+      <ion-list no-lines class="border-bottom">
+
+        <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/avatar_default.svg">
+      </ion-avatar>
+      <h3>5 Jun 2017</h3>
+      <h2>Muhammad bin Iswan</h2>
+      <p>Timesheet for 29 May - 4 Jun 2017</p>
+      <ion-note item-right>
+        42:00 hrs
+      </ion-note>
+    </button>
+
+        <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/avatar_default.svg">
+      </ion-avatar>
+      <h3>5 Jun 2017</h3>
+      <h2>Siti Fatimah binti Ali</h2>
+      <p>Timesheet for 29 May - 4 Jun 2017</p>
+      <ion-note item-right>
+        40:00 hrs
+      </ion-note>
+    </button>
+
+        <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/avatar_default.svg">
+      </ion-avatar>
+      <h3>5 Jun 2017</h3>
+      <h2>Christopher Lee</h2>
+      <p>Timesheet for 29 May - 4 Jun 2017</p>
+      <ion-note item-right>
+        46:00 hrs
+      </ion-note>
+    </button>
+
+        <button ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/avatar_default.svg">
+      </ion-avatar>
+      <h3>29 May 2017</h3>
+      <h2>Christopher Lee</h2>
+      <p>Timesheet for 22 May - 28 May 2017</p>
+      <ion-note item-right>
+        43:00 hrs
+      </ion-note>
+    </button>
+
+      </ion-list>-->
+    </div>
+
+    <div *ngSwitchCase="'report'">
+      <div class="in-progress">
+        <img src="assets/images/svg_inprogress.svg">
+        <div>This page is under construction</div>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

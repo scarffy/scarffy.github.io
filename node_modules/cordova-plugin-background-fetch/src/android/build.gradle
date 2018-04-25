@@ -1,0 +1,10 @@
+repositories{    
+  jcenter()
+  maven {
+    url 'src/android/libs'
+  }
+}
+
+dependencies {
+    compile(group: 'com.transistorsoft', name:'tsbackgroundfetch', version: '+')
+}

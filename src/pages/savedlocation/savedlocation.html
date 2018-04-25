@@ -1,0 +1,59 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Manage Saved Location</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="alt-bg">
+
+  <ion-list no-lines class="listing timeline border-bottom">
+    <ion-item-group>
+
+      <div *ngFor="let item of nearbyPlaces; let i = index">
+        <button ion-item (click)="renamePrompt(i)">
+        <ion-icon class="act-type working" item-left></ion-icon>
+        <h3 class="title">{{item.changed}}</h3>  
+        <p class="desc">{{item.original}}</p> 
+        <!--<p class="desc">{{item.project}}</p> -->
+        <ion-note item-right>
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </ion-note>    
+      </button>
+      </div>
+
+      <!--<button ion-item (click)="renamePrompt()">
+        <ion-icon class="act-type working" item-left></ion-icon>
+        <h3 class="title">Custom name</h3>   
+        <p class="desc">Original location name</p>  
+        <ion-note item-right>
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </ion-note>  
+      </button>
+
+      <button ion-item (click)="renamePrompt()">
+        <ion-icon class="act-type working" item-left></ion-icon>
+        <h3 class="title">Custom name</h3>   
+        <p class="desc">Original location name</p>  
+        <ion-note item-right>
+          <ion-icon name="ios-create-outline"></ion-icon>
+        </ion-note>     
+      </button>-->
+
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>
+
+
+
+<!--
+
+<ion-content no-bounce>
+  <div class="in-progress">
+    <img src="assets/images/svg_inprogress.svg">
+    <div>This page is under construction</div>
+  </div>
+</ion-content>-->

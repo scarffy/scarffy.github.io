@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Project</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="ios-trash-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-item-group>
+    <ion-list inset>
+      <ion-item>
+        <ion-label>Project Code</ion-label>
+        <ion-select [(ngModel)]="projectCode" (ionChange)="onSelectionProject()" placeholder="Select Project Code">
+          <ion-option *ngFor="let key of favProjects" [value]="key">{{key.projectName}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Set Activity</ion-label>
+        <ion-select [(ngModel)]="activity" (ionChange)="onSelectionActivity()" placeholder="Undefined">
+          <ion-option *ngFor="let item of favActivity" [value]="item">{{item.workPackageName}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item-divider>SELECT LOCATION</ion-item-divider>
+  </ion-item-group>
+
+</ion-header>
+
+<ion-content class="has-footer">
+
+  <ion-item-group>
+    <ion-list radio-group no-lines class="listing timeline">
+      <ion-item *ngFor="let place of nearByPlaces, let idx = index">
+        <ion-icon class="act-type location" item-left></ion-icon>
+        <ion-label class="">{{ place.name }}</ion-label>
+        <ion-radio [value]="place.id" [checked]="idx === 0" (click)="onSelectionChange(place.name)"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-item-group>
+
+  <div class="buttons-wrapper">
+    <button ion-button outline (click)="manageSavedLocation()">  
+        Manage Saved Location
+      </button>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <div class="buttons-wrapper bottom stick">
+    <button ion-button class="primary-btn" (click)="savechanges()">SAVE CHANGES</button>
+  </div>
+</ion-footer>

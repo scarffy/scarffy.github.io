@@ -1,0 +1,242 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="ios-menu-outline"></ion-icon>
+    </button>
+    <ion-title>Training</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content no-bounce>
+  <div class="in-progress">
+    <img src="assets/images/svg_inprogress.svg">
+    <div>This page is under construction</div>
+  </div>
+</ion-content>
+
+<!--<ion-header>
+  <div class="segment-custom">
+    <ion-row>
+      <ion-col col-2>
+        <button ion-button menuToggle clear color="light" class="button-fix left">
+            <ion-icon name='menu'></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-8>
+        <ion-segment [(ngModel)]="courses_achievements">
+          <ion-segment-button value="courses" class="white-border white-font">
+            Courses
+          </ion-segment-button>
+          <ion-segment-button value="achievements" class="white-border white-font">
+            Achievements
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button menuToggle clear color="light" class="button-fix right">
+            <ion-icon name='notifications-outline'></ion-icon>
+         </button>
+      </ion-col>
+    </ion-row>
+  </div>
+<ion-title>Training</ion-title>
+</ion-header>
+
+<ion-content>
+
+  <div [ngSwitch]="courses_achievements">
+    <ion-list *ngSwitchCase="'courses'">
+      <ion-card>
+        <ion-card-header>
+          Topics
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row class="center">
+              <ion-col>
+                <button ion-button block class="meeting-btn" clear></button>
+                <div>Data Analysis</div>
+              </ion-col>
+              <ion-col>
+                <button ion-button block class="meeting-btn" clear></button>
+                <div>Business Intelligence</div>
+              </ion-col>
+              <ion-col>
+                <button ion-button block class="meeting-btn" clear></button>
+                <div>Project Management</div>
+              </ion-col>
+              <ion-col>
+                <button ion-button block class="meeting-btn" clear></button>
+                <div>Communication</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-item-divider color="light">IN-PROGRESS</ion-item-divider>
+          <ion-item-group>
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="assets/images/ico32_CalendarCat.png">
+              </ion-thumbnail>
+              <h2>Data Science Foundations: Data Mining</h2>
+              <p>Beginner . 6 Lessons</p>
+              <p>Data Analysis</p>
+              <ion-note item-right>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </ion-note>
+            </ion-item>
+          </ion-item-group>
+
+          <ion-item-divider color="light">MORE COURSES</ion-item-divider>
+          <ion-item-group>
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="assets/images/ico32_CalendarCat.png">
+              </ion-thumbnail>
+              <h2>Tableau 10 Essential Training</h2>
+              <p>Intermediate . 10 Lessons</p>
+              <p>Data Analysis</p>
+              <ion-note item-right>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </ion-note>
+            </ion-item>
+
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="assets/images/ico32_CalendarCat.png">
+              </ion-thumbnail>
+              <h2>Marketing Analytics: Segmentation and Testing</h2>
+              <p>Advanced . 8 Lessons</p>
+              <p>Data Analysis</p>
+              <ion-note item-right>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </ion-note>
+            </ion-item>
+
+            <ion-item>
+              <ion-thumbnail item-left>
+                <img src="assets/images/ico32_CalendarCat.png">
+              </ion-thumbnail>
+              <h2>Implementing Information Security Program</h2>
+              <p>Intermediate . 9 Lessons</p>
+              <p>Data Analysis</p>
+              <ion-note item-right>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </ion-note>
+            </ion-item>
+
+
+          </ion-item-group>
+
+
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+    <ion-list *ngSwitchCase="'achievements'">
+      <ion-card>
+        <ion-card-header>
+          My Achievements
+        </ion-card-header>
+        <ion-card-content>
+          <ion-row>
+            <ion-col class="center border">
+              <p>Courses Completed</p>
+              <h2>3</h2>
+            </ion-col>
+            <ion-col class="center border">
+              <p>Average Scores</p>
+              <h2>86%</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="center border">
+              <p>Most Active Topic</p>
+              <h2>Data Analysis</h2>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+        <ion-item-divider color="light">HISTORY</ion-item-divider>
+        <ion-item-group>
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="assets/images/ico32_CalendarCat.png">
+            </ion-thumbnail>
+            <h2>Marketing Research Fundamentals</h2>
+            <p>Beginner . 4 Lesosns</p>
+            <p>RESEARCH</p>
+            <ion-note item-right>
+              83%
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="assets/images/ico32_CalendarCat.png">
+            </ion-thumbnail>
+            <h2>Data Science: Telling Stories with Data</h2>
+            <p>Appropriate for All . 3 Lessons</p>
+            <p>DATA ANALYSIS</p>
+            <ion-note item-right>
+              96%
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="assets/images/ico32_CalendarCat.png">
+            </ion-thumbnail>
+            <h2>Introduction to Business Performance Analysis</h2>
+            <p>Intermediate . 6 Lessons</p>
+            <p>DATA ANALYSIS</p>
+            <ion-note item-right>
+              79%
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="assets/images/ico32_CalendarCat.png">
+            </ion-thumbnail>
+            <h2>Marketing Research Fundamentals</h2>
+            <p>Beginner . 4 Lesosns</p>
+            <p>RESEARCH</p>
+            <ion-note item-right>
+              83%
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="assets/images/ico32_CalendarCat.png">
+            </ion-thumbnail>
+            <h2>Data Science: Telling Stories with Data</h2>
+            <p>Appropriate for All . 3 Lessons</p>
+            <p>DATA ANALYSIS</p>
+            <ion-note item-right>
+              96%
+            </ion-note>
+          </ion-item>
+
+          <ion-item>
+            <ion-thumbnail item-left>
+              <img src="assets/images/ico32_CalendarCat.png">
+            </ion-thumbnail>
+            <h2>Introduction to Business Performance Analysis</h2>
+            <p>Intermediate . 6 Lessons</p>
+            <p>DATA ANALYSIS</p>
+            <ion-note item-right>
+              79%
+            </ion-note>
+          </ion-item>
+
+        </ion-item-group>
+
+      </ion-card>
+    </ion-list>
+
+  </div>
+
+<div class="side-padding center"><br />Under development<br />- Will redirect to iLearn</div>
+</ion-content>-->

@@ -1,0 +1,21 @@
+page-profile {
+  .profile-wrapper {
+    text-align: center;
+    padding: 15px 0;
+    .title {
+      font-size: 1.7rem;
+      margin: 10px 0 0 0;
+    }
+  }
+  .qr-wrapper {
+    text-align: center;
+    padding: 20px 0;
+    small {
+      display: block;
+      padding-bottom: 20px;
+    }
+  }
+  .border-bottom.gap {
+    margin-bottom: 30px;
+  }
+}

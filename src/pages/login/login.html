@@ -1,0 +1,49 @@
+<ion-content no-bounce class="theme-color">
+
+  <div class="login-content">
+
+    <div class="appicon center">
+      <img src="assets/images/svg_appIcon.svg" />
+      <h2>iStaff</h2>
+    </div>
+
+    <form [formGroup]="loginForm">
+
+      <ion-item>
+        <ion-input class="input" autocapitalize="off" autocorrect="off" spellcheck="false" formControlName="employeeId" type="text"
+          placeholder="Employee ID or Email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!loginForm.controls.employeeId.valid  && submitAttempt">
+        <p class="invalid">Please enter a valid Employee ID or Email Address</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-input class="input" formControlName="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!loginForm.controls.password.valid  && submitAttempt">
+        <p class="invalid">Please enter a valid password</p>
+      </ion-item>
+
+      <div class="login-buttons">
+
+        <button ion-button item-right class="primary-btn icon-btn" (click)="addFingerPrint()">
+           <ion-icon name="ios-finger-print"></ion-icon>
+        </button>
+        <button ion-button item-left style="width:83%;" class="primary-btn login-btn" (click)="goToHome()">LOGIN</button>
+      </div>
+
+      <div class="forgot-pwd center">
+        <button ion-button clear (click)="goToForgotPassword()">Forgot Password?</button>
+      </div>
+
+      <button ion-button class="opac-secondary-btn" (click)="goToSignUp()">SIGNUP</button>
+
+    </form>
+
+  </div>
+
+  <div class="footer center">
+    <img src="assets/images/logo_xchanging.svg" /><br /> © Xchanging, A DXC Technology Company, <br />All Rights Reserved.
+  </div>
+
+</ion-content>

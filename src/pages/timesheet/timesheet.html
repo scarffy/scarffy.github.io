@@ -1,0 +1,421 @@
+<ion-header no-bounce class="custom center">
+
+  <ion-navbar class="transparent" hideBackButton>
+    <ion-buttons left>
+      <button *ngIf="isPushed" ion-button (click)="backbtnClick()">
+            <label>Back</label>
+        </button>
+    </ion-buttons>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="ios-menu-outline"></ion-icon>
+    </button>
+
+    <ion-segment [(ngModel)]="timesheet_segment" click="segmentClick()">
+      <ion-segment-button value="weekly">
+        Weekly
+      </ion-segment-button>
+      <ion-segment-button value="monthly">
+        Monthly
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="submitOrSave()">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+  <div class="calendar-wrapper">
+    <div class="calendar-month">
+      <button class="icon-btn clear back" ion-button icon-only (click)="leftbtnClick()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+
+      <div [ngSwitch]="timesheet_segment">
+        <div *ngSwitchCase="'weekly'">
+          <h5>{{dateNow | formatMonth}}</h5>
+        </div>
+        <div *ngSwitchCase="'monthly'">
+          <h5>{{dateNow_Month | formatMonth}}</h5>
+        </div>
+      </div>
+
+      <button class="icon-btn clear forward" ion-button icon-only (click)="rightbtnClick()">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </button>
+    </div>
+  </div>
+
+</ion-header>
+
+<ion-content class="has-header">
+
+  <div [ngSwitch]="timesheet_segment">
+    <div *ngSwitchCase="'weekly'">
+
+      <div class="calendar-wrapper">
+        <div class="calendar-week">
+          <div class="weeks">
+            <span *ngFor="let day of arrOfDays"> {{day}} </span>
+          </div>
+          <button ion-button class="day-btn" *ngFor="let day of headerLabels;let p = index" (click)="weekdayClick(day.dateString,p);"
+            [class.active]="p == selectedButtonIndex">
+
+            <div *ngIf ="day.isGreater">
+              <div class="days fade">
+              {{day.dateString}}
+               </div>
+               <div  class="hours fade">
+              {{day.hours}}
+                </div>
+            </div>
+            
+            <div *ngIf ="!day.isGreater">
+               <div class="days">
+              {{day.dateString}}
+               </div>
+               <div  class="hours">
+
+                    {{day.hours}}
+                </div>
+            </div>
+
+            <!--
+              <div class="days">
+                {{day.dateString}}
+              </div>
+              <div  class="hours">
+                {{day.hours}}
+              </div>-->
+              <div class="status" *ngIf="day.status">
+                <ion-icon name="ios-checkmark"></ion-icon>
+              </div>
+            </button>
+        </div>
+      </div>
+
+      <ion-list no-lines *ngIf="isSelected" class="listing edit-timeline">
+
+        <ion-item-group>
+          <ion-item-divider>EDIT TIMESHEET</ion-item-divider>
+
+          <div class="scrollable2">
+
+            <div *ngFor="let item of singleDayActivity">
+              <div *ngIf="item.day == daySelected">
+
+                <div class="timeline-item" *ngFor="let project of item.project; let i=index" text-wrap [ngClass]="{active: isGroupShown(i)}">
+
+                  <ion-item button class="project-item" (click)="toggleGroup(i)">
+                    <ion-icon class="act-type working" item-left></ion-icon>
+                    <!--<p class="timestamp">9:00am - 10:00am</p>-->
+                    <h3 class="title">{{project.name}}</h3>
+                    <p class="desc">{{project.location}}</p>
+                    <ion-note item-right class="with-expand-collapse">
+                      <label>{{project.time}}</label>
+                      <ion-icon name="ios-arrow-down"></ion-icon>
+                    </ion-note>
+                  </ion-item>
+
+                  <div *ngIf="isGroupShown(i)">
+                    <div *ngIf="curSelectedProject != null">
+
+                      <ion-list class="activity-item" *ngFor="let activity of curSelectedProject.activities; let j = index">
+                        <button ion-button icon-only class="icon-btn clear close" (click)="deleteActivity(j)">
+                          <ion-icon name="ios-close"></ion-icon>
+                        </button>
+                        <ion-item>
+                          <ion-label class="title">
+                            {{activity.activityName}}
+                          </ion-label>
+                          <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" (ionChange)="changeDate(activity.activityTime,j)"></ion-datetime>
+                        </ion-item>
+                        <!--[(ngModel)]="activity.activityTime"-->
+                      </ion-list>
+
+                      <!--<div class="activity-item" *ngFor="let activity of curSelectedProject.activities; let j = index">
+                        <div class="title">{{activity.activityName}}</div>
+                        <div class="edit-hours">
+                          <button ion-button item-right class="icon-btn clear" (click)="decrementClick(j)">
+                            <ion-icon name="ios-remove"></ion-icon>
+                          </button>
+                          <div class="hours-input">
+                            <ion-input type="tel" maxlength="2" [value]="activity.hour" (input)="changedHour($event.target.value,j)"></ion-input>:
+                            <ion-input type="tel" maxlength="2" [max]="59" [value]="activity.min" (input)="changedMin($event.target.value,j)"></ion-input> hrs
+                          </div>
+                          <span><label class="hours-input">{{activity.activityTime}}</label> hrs</span>
+                          <button ion-button item-right class="icon-btn clear" (click)="incrementClick(j)">
+                              <ion-icon name="ios-add"></ion-icon>
+                          </button>
+                        </div>
+                      </div>-->
+                    </div>
+                    <div class="activity-button">
+                      <button ion-button icon-left outline (click)="addActivity(i)" class="activitybutton">  
+                          <ion-icon name="ios-add"></ion-icon>
+                          ADD ACTIVITY
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+          <!--<div class="buttons-wrapper bottom" *ngIf="timesheet_segment == 'weekly'">
+
+
+            <button ion-button class="primary-btn submit" (click)="submitTimeSheet()" [disabled]="!isFooterbtnDisabled">{{saveSubmit}}</button>
+
+
+          </div>-->
+          <!--<div class="buttons-wrapper bottom">
+            <button ion-button class="primary-btn submit" disabled>Save Changes</button>
+          </div>-->
+        </ion-item-group>
+      </ion-list>
+
+
+      <div *ngIf="!isSelected">
+
+        <div class="stat-grids center">
+          <ion-row>
+            <ion-col class="grid" col-6>
+              <p class="label">Weekly Total Hours</p>
+              <h3>{{totalWorkingHrs}}</h3>
+            </ion-col>
+            <ion-col class="grid" col-6>
+              <p class="label">Total Break</p>
+              <h3>{{totalbreak}}</h3>
+            </ion-col>
+          </ion-row>
+        </div>
+
+        <ion-list no-lines class="listing timeline border-bottom">
+          <ion-item-group>
+            <ion-item-divider>Project Hours</ion-item-divider>
+
+            <div class="scrollable">
+              <div *ngFor="let item of singleWeekActivity">
+                <!--<div *ngIf="item.day == daySelected">-->
+
+                <!--<ion-item *ngFor="let project of item.project">-->
+                <ion-item>
+                  <ion-icon class="act-type working" item-left></ion-icon>
+                  <h3 class="title">{{item.name}}</h3>
+                  <p class="desc">{{item.location}}</p>
+                  <ion-note item-right>{{item.time}}</ion-note>
+
+                </ion-item>
+                <!--</div>-->
+              </div>
+
+            </div>
+          </ion-item-group>
+        </ion-list>
+
+        <!--<div class="buttons-wrapper bottom" *ngIf="timesheet_segment == 'weekly'">
+          <button ion-button class="primary-btn submit" (click)="submitTimeSheet()" [disabled]="!isFooterbtnDisabled">{{saveSubmit}}</button>
+        </div>-->
+
+      </div>
+
+
+    </div>
+
+
+
+    <div *ngSwitchCase="'monthly'" class="toggle-monthly">
+
+      <div class="calendar-wrapper">
+        <div class="calendar-week">
+          <div class="weeks">
+            <span *ngFor="let day of arrOfDays"> {{day}} </span>
+          </div>
+          <button ion-button class="day-btn" *ngFor="let day of headerLabels_Monthly;let p = index" (click)="weekdayClick(day.dateString,p);"
+            [class.active]="p == selectedButtonIndex">
+
+            <div *ngIf ="day.isGreater">
+              <div class="days fade">
+              {{day.dateString}}
+               </div>
+               <div  class="hours fade">
+              {{day.hours}}
+                </div>
+            </div>
+            
+            <div *ngIf ="!day.isGreater">
+               <div class="days">
+              {{day.dateString}}
+               </div>
+               <div  class="hours">
+              {{day.hours}}
+                </div>
+            </div>
+            <div class="status" *ngIf="day.status">
+              <ion-icon name="ios-checkmark"></ion-icon>
+            </div>
+    </button>
+        </div>
+      </div>
+      <div class="stat-grids center">
+        <ion-row>
+          <ion-col class="grid" col-6>
+            <p class="label">Total Working Hours</p>
+            <h3>{{totalWorkingHrs_month}}</h3>
+          </ion-col>
+          <ion-col class="grid" col-6>
+            <p class="label">Total Break</p>
+            <h3>{{totalbreak_month}}</h3>
+          </ion-col>
+          <ion-col class="grid" col-6>
+            <p class="label">Total Ongoing Projects</p>
+            <h3>{{totalOngoingProjects}}</h3>
+          </ion-col>
+          <ion-col class="grid" col-6>
+            <p class="label">Busiest Project</p>
+            <h3>{{busiestProject}}</h3>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="pie-chart-wrapper">
+        <div class="shadow">
+          <canvas class="pie-chart" baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend"
+            [chartType]="chartShadowType" [colors]="chartShadowColors"></canvas>
+        </div>
+        <div class="actual">
+          <canvas class="pie-chart" baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend"
+            [chartType]="chartType" [colors]="chartColors"></canvas>
+        </div>
+        <ul class="legend">
+          <li><span></span> Work </li>
+          <li><span></span> Meeting </li>
+          <li><span></span> Client </li>
+          <li><span></span> Break </li>
+        </ul>
+
+        <!--<ion-icon class="act-type working"></ion-icon>
+          <ion-icon class="act-type meeting"></ion-icon>
+          <ion-icon class="act-type client"></ion-icon>
+          <ion-icon class="act-type break"></ion-icon>-->
+      </div>
+
+      <ion-list no-lines class="listing timeline border-bottom">
+        <ion-item-group>
+          <ion-item-divider>ACTIVITIES</ion-item-divider>
+
+          <ion-item *ngFor="let obj of totalProjHours">
+            <ion-icon class="act-type working" item-left></ion-icon>
+            <h3 class="title">{{obj.name}}</h3>
+            <ion-note item-right>{{obj.time}}</ion-note>
+          </ion-item>
+
+          <!--<ion-item>
+            <ion-icon class="act-type meeting" item-left></ion-icon>
+            <h3 class="title">KL YTL Presales</h3>        
+            <ion-note item-right>15:00 hrs</ion-note> 
+          </ion-item>
+
+          <ion-item>
+            <ion-icon class="act-type client" item-left></ion-icon>
+            <h3 class="title">KL Frog VLE</h3>        
+            <ion-note item-right>12:15 hrs</ion-note> 
+          </ion-item>          -->
+        </ion-item-group>
+      </ion-list>
+
+      <!--<ion-list no-lines class="listing timeline border-bottom">
+        <ion-item-group>
+          <ion-item-divider>Locations</ion-item-divider>
+
+          <ion-item>
+            <ion-icon class="act-type location" item-left></ion-icon>
+            <h3 class="title">Xchanging Malaysia</h3>        
+            <ion-note item-right>43:20 hrs</ion-note> 
+          </ion-item>
+
+          <ion-item>
+            <ion-icon class="act-type location" item-left></ion-icon>
+            <h3 class="title">One Oriental Place</h3>        
+            <ion-note item-right>15:00 hrs</ion-note> 
+          </ion-item>
+
+          <ion-item>
+            <ion-icon class="act-type location" item-left></ion-icon>
+            <h3 class="title">D6 Sentul East</h3>        
+            <ion-note item-right>12:15 hrs</ion-note> 
+          </ion-item>          
+        </ion-item-group>
+      </ion-list>-->
+
+      <ion-list no-lines class="listing timeline">
+        <ion-item-group class="bg-timeline complete">
+          <ion-item-divider>Timeline</ion-item-divider>
+
+          <ion-item *ngFor="let item of totalWeek">
+            <ion-icon class="act-type calendar" item-left></ion-icon>
+            <p class="timestamp">{{item.week}}</p>
+            <h3 class="title">{{item.name}}</h3>
+            <ion-note item-right>{{item.time}}</ion-note>
+          </ion-item>
+
+          <!--<ion-item>
+            <ion-icon class="act-type calendar" item-left></ion-icon>
+            <p class="timestamp">1 SEp - 3 Sep</p>
+            <h3 class="title">Week 1</h3>    
+            <ion-note item-right>12:15 hrs</ion-note> 
+          </ion-item>-->
+
+        </ion-item-group>
+      </ion-list>
+
+      <div class="journey-map">
+        <img src="assets/images/sample_journeymap.png" />
+        <button ion-button class="icon-btn float round expand">
+          <ion-icon name="md-expand"></ion-icon>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>
+
+<!--LATEST-->
+<!--<ion-footer>
+  <div *ngIf = "timesheet_segment == 'weekly'">
+  <div class="buttons-wrapper bottom">
+     <button ion-button class="primary-btn submit" (click)="submitTimeSheet()" [disabled]= "!isFooterbtnDisabled">{{saveSubmit}}</button>
+  </div>
+  </div>
+</ion-footer>-->
+
+<!--<ion-footer>
+  <div *ngIf = "timesheet_segment == 'weekly'">
+  <div *ngIf="saveSubmit == 'SUBMIT'" class="buttons-wrapper bottom">  
+    <button ion-button class="primary-btn submit" (click)="submitTimeSheet()" >{{saveSubmit}}</button>
+  </div>
+  </div>
+</ion-footer>-->
+
+<!--<ion-footer  *ngIf="isSelected">
+  <div *ngIf = "timesheet_segment == 'weekly'">
+  <div class="buttons-wrapper bottom">
+     <button ion-button class="primary-btn submit" (click)="submitTimeSheet()" >{{saveSubmit}}</button>
+  </div>
+  </div>
+</ion-footer>
+
+<ion-footer *ngIf="!isSelected">
+  <div *ngIf = "timesheet_segment == 'weekly'">
+  <div *ngIf="saveSubmit == 'SUBMIT'" class="buttons-wrapper bottom">  
+    <button ion-button class="primary-btn submit" (click)="submitTimeSheet()" >{{saveSubmit}}</button>
+  </div>
+  </div>
+</ion-footer>-->

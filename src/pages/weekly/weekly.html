@@ -1,0 +1,103 @@
+<ion-header class="theme-color">
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+    </ion-buttons>
+    <ion-title>
+      Weekly View
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="dismiss()">
+                <ion-icon name="trash"></ion-icon>
+            </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page-modal">
+  <ion-list>
+    <ion-row>
+        <ion-col class="center border">
+          <p>Total Working Hours</p>
+          <h2>40:26 hr</h2>
+        </ion-col>
+        <ion-col class="center border">
+          <p>Total Break</p>
+          <h2>01:58 hr</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="center border"> 
+          <p>Total Check-Ins</p>
+          <h2>20</h2>
+        </ion-col>
+        <ion-col class="center border">
+          <p>Busiest Activity</p>
+          <h2>Working</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-card>  
+          <ion-card-header>
+            Pie Chart
+          </ion-card-header>
+          <ion-card-content>
+            <div #bar id="bar"></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+
+      <ion-item-divider color="light">TIMELINE</ion-item-divider>
+      <ion-item-group>
+        <ion-item (click)="viewWeekly()">
+          <ion-avatar item-left>
+            <img src="assets/images/ico32_CalendarCat.png">
+          </ion-avatar>
+          <h2>Week 5</h2>
+          <p>27 Feb - 28 Feb</p>
+          <ion-note item-right>--:--</ion-note>
+          
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/images/ico32_CalendarCat.png">
+          </ion-avatar>
+          <h2>Week 4</h2>
+          <p>20 Feb - 26 Feb</p>
+          <ion-note item-right>--:--</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/images/ico32_CalendarCat.png">
+          </ion-avatar>
+          <h2>Week 3</h2>
+          <p>13 Feb - 19 Feb</p>
+          <ion-note item-right>--:--</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/images/ico32_CalendarCat.png">
+          </ion-avatar>
+          <h2>Week 2</h2>
+          <p>6 Feb - 12 Feb</p>
+          <ion-note item-right>10:35 hr</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="assets/images/ico32_CalendarCat.png">
+          </ion-avatar>
+          <h2>Week 1</h2>
+          <p>1 Feb - 5 Feb</p>
+          <ion-note item-right>29:51 hr</ion-note>
+        </ion-item>
+      </ion-item-group>
+     
+      <ion-row>
+        <div #map id="map"></div>
+      </ion-row>
+
+  </ion-list>
+</ion-content>
+

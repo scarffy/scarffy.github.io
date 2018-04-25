@@ -1,0 +1,20 @@
+page-expense {
+  .expense-item {
+    h3 {
+      color: color($colors, ash-grey);
+    }
+    [item-right] {
+      font-weight: 500;
+      color: #111;
+      font-size: 1.7rem;
+      text-align: right;
+      position: relative;
+    }
+    .items {
+      font-weight: normal;
+    }
+  }
+  .item-ios h2 {
+    font-size: 1.5rem;
+  }
+}

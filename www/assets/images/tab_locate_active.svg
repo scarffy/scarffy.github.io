@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>nav_Locate_Active</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.4833333,15.4500002 L15.4833333,11.972414 L18.1833333,11.972414 L18.1833333,15.4500002 L21.6609195,15.4500002 L21.6609195,18.1500002 L18.1833333,18.1500002 L18.1833333,21.6275864 L15.4833333,21.6275864 L15.4833333,18.1500002 L12.0057471,18.1500002 L12.0057471,15.4500002 L15.4833333,15.4500002 Z M27.1505747,27.1172416 L18.8333333,27.1172416 L18.8333333,25.6000004 L25.5933278,25.6000004 L25.5933278,18.8000002 L27.1505747,18.8000002 L27.1505747,27.1172416 Z M5.83333333,27.1172416 L5.83333333,18.8000002 L7.39333089,18.8000002 L7.39333089,25.6000004 L14.1505747,25.6000004 L14.1505747,27.1172416 L5.83333333,27.1172416 Z M5.83333333,6 L14.1505747,6 L14.1505747,7.60000038 L7.39333089,7.60000038 L7.39333089,14.3172414 L5.83333333,14.3172414 L5.83333333,6 Z M27.1505747,6 L27.1505747,14.3172414 L25.5933278,14.3172414 L25.5933278,7.60000038 L18.8333333,7.60000038 L18.8333333,6 L27.1505747,6 Z" id="path-1"></path>
+        <linearGradient x1="39.3057638%" y1="56.1810924%" x2="59.2101313%" y2="-60.934621%" id="linearGradient-3">
+            <stop stop-color="#14A5CC" offset="0%"></stop>
+            <stop stop-color="#1CC99C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav/Locate-Active" transform="translate(-31.000000, -4.000000)">
+            <g id="Timesheet">
+                <rect id="Bound" x="0" y="0" width="93.8300018" height="53"></rect>
+                <g transform="translate(30.666667, 4.000000)">
+                    <rect id="Bound" x="0.333333333" y="0" width="32" height="32"></rect>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Combined-Shape" fill="#B5C6D3" xlink:href="#path-1"></use>
+                    <polygon id="Oval-7" fill="url(#linearGradient-3)" mask="url(#mask-2)" points="79 49 79 -4 -46 -4 -46 49"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

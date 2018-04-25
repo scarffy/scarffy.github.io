@@ -1,0 +1,60 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-background-geolocation-lt": {
+      "BACKGROUND_MODE_LOCATION": "<string>location</string>",
+      "LOCATION_ALWAYS_AND_WHEN_IN_USE_USAGE_DESCRIPTION": "Always use is required for constant background location-tracking",
+      "LOCATION_ALWAYS_USAGE_DESCRIPTION": "Premium Background location-tracking is required",
+      "LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION": "Premium Background location-tracking is required",
+      "MOTION_USAGE_DESCRIPTION": "Premium Using the accelerometer increases battery-efficiency by intelligently toggling location-tracking only when the device is detected to be moving",
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-google-analytics": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-background-fetch": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-cocoalumberjack": {
+      "PACKAGE_NAME": "io.ionic.starter"
+    }
+  }
+}

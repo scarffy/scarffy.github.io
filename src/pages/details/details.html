@@ -1,0 +1,33 @@
+<ion-header class="theme-color">
+  <ion-navbar>
+    <ion-title>
+      {{ arrmixCourse.displayname ? arrmixCourse.displayname : arrmixCourse.fullname }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header theme-color">
+  <ion-list>
+    <ion-card>
+      <ion-card-header>
+        About the course
+      </ion-card-header>
+      <ion-card-content>
+       <!--<pre> -->
+         (Working on formatting this text)<br>
+         {{arrmixCourse.summary }} 
+         <!--</pre>-->
+      </ion-card-content>
+    </ion-card>
+
+	<ion-item-sliding *ngFor="let course of arrmixContents">
+  <ion-item *ngIf="0 != course.section">
+    <h2>{{ course.name }}</h2>
+    <!--<h3>{{arrmixCourse.summary1 }}</h3>-->
+	<button ion-button clear item-right (click) ="handleViewCourseContent( course )">
+		<ion-icon name="ios-arrow-forward-outline"></ion-icon>
+	</button>
+	  </ion-item>
+	</ion-item-sliding>
+ </ion-list>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "iStaff",
+  "app_id": "fd490076",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+          <ion-icon name="ios-close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Edit Current Activity
+    </ion-title>
+  </ion-navbar>
+
+
+  <div #map id="map"></div>
+
+  <ion-item-group>
+
+    <ion-item-divider>EDIT DETAILS</ion-item-divider>
+    <ion-list inset>
+      <ion-item>
+        <ion-label>Project Code</ion-label>
+        <!--placeholder="Select Project Code"  [(ngModel)]="projectCode.projectName"-->
+        <ion-select [(ngModel)]="projectCode" (ionChange)="onSelectionProject()">
+          <ion-option *ngFor="let key of favProjects" [value]="key.projectName" [selected]="key.projectName == projectCode">{{key.projectName}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Activity</ion-label>
+        <!--placeholder="Select Activity Type" [(ngModel)]="activity.workPackageName"-->
+        <ion-select [(ngModel)]="activity" (ionChange)="onSelectionActivity()">
+          <ion-option *ngFor="let item of favActivity" [value]="item.workPackageName" [selected]="item.workPackageName == activity">{{item.workPackageName}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item-divider>SELECT LOCATION</ion-item-divider>
+  </ion-item-group>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-item-group>
+    <ion-list radio-group no-lines class="listing timeline">
+      <ion-item *ngFor="let place of nearByPlaces, let idx = index">
+        <ion-icon class="act-type location" item-left></ion-icon>
+        <ion-label class="">{{ place.changed }}</ion-label>
+        <ion-radio [value]="place.id" [checked]="idx === checkedNumber" (click)="onSelectionChange(place.changed)"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-item-group>
+</ion-content>
+
+<ion-footer>
+  <div class="buttons-wrapper bottom">
+    <button ion-button class="secondary-btn" (click)="update()">Update Current Activity</button>
+    <button ion-button class="primary-btn" (click)="completed()">Completed Activity</button>
+  </div>
+</ion-footer>

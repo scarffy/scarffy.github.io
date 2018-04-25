@@ -1,0 +1,83 @@
+page-login {
+  background: linear-gradient(37deg, #14A5CC 69%, #18B9B2 100%);
+  position: relative;
+  .theme-color {
+    background: url(../assets/images/bg_pattern.svg) repeat;
+  }
+  .login-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+  }
+  .appicon {
+    padding-bottom: 5px;
+    img {
+      width: 120px;
+      height: auto;
+    }
+    h2 {
+      color: #fff;
+      font-weight: 400;
+      letter-spacing: 0.05rem;
+      margin-top: 7px;
+    }
+  }
+  .item-input,
+  .button {
+    margin-top: 10px;
+  }
+  .forgot-pwd {
+    button {
+      color: #fff;
+    }
+  }
+  .footer {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    color: #fff;
+    font-size: 0.75em;
+    img {
+      width: 100px;
+      margin-bottom: 5px;
+    }
+  } // Override
+  .item-ios.item-block .item-inner {
+    border-bottom: 0;
+  } // .svg-fingerprint {
+  //   margin-right: 10px;
+  // } // .login-btn span {
+  //   padding-right: 15px;
+  // }
+  .login-buttons .icon-btn {
+    width: 45px;
+    height: 45px;
+  }
+  .login-btn {
+    float: right;
+    width: calc(100% - 52px);
+    margin-right: -1px;
+    padding-right: 25px;
+  }
+}
+
+.alert-ios.fingerprint-login .alert-button:last-child {
+  font-weight: normal;
+}
+
+.alert-ios.fingerprint-login .alert-button {
+  border-top: 0;
+}
+
+.alert-ios.fingerprint-login .alert-head {
+  padding-top: 70px;
+  background: url(../assets/images/svg_fingerprint.svg) no-repeat center top 10px;
+}
+
+.alert-ios.fingerprint-login .button-inner {
+  color: #ccc;
+}

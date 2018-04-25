@@ -1,0 +1,15 @@
+page-savedlocation {
+  .item-ios[detail-push] .item-inner,
+  button.item-ios:not([detail-none]) .item-inner,
+  a.item-ios:not([detail-none]) .item-inner {
+    background-image: none;
+    padding-right: 16px;
+  }
+  .listing [item-right] {
+    font-size: 2.2rem;
+  }
+  .item-block {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
