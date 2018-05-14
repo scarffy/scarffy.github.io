@@ -1,74 +1,22 @@
-<!-- <!DOCTYPE html>
-<html>
-	<head>
-        <meta charset="utf-8" />
-		<title>Kim a so-so developer</title>
-		<!-- link to main stylesheet -->
-<!-- 		<link rel="stylesheet" type="text/css" href="/css/main.css"> -->
-<!--         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
-        <style>
-            body { margin:20%; padding:20%; }
-            #map { position:absolute; top:0; bottom:0; width:50%; }
-            #rendering {width:50%; height: 50%;}
-        </style>
-	</head>
-	<body> -->
-<!-- 		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Kim</h1>
-				<p>I'm just trying out mapbox for web here</p>
-    		</div><!-- /.blurb -->
-<!--     </div><!-- /.container --> 
-<!--     <div class="container"> -->
-<!--         <div id='map'></div> -->
-<!--       </div>
-      <div class="container" id='rendering'>
-
-      </div> -->
-<!--         <script>
-          // Mapbox
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZGF2aWRndWFuIiwiYSI6ImNpcG50N2s4NDAwNGRmbG5jeXZtMHkxMW4ifQ.ubiXybBxhpidF83H-Zvz7Q';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        center: [0, 0],
-        zoom: 2
-    }); -->
-<!-- // three js
-    var scene = new THREE.Scene();
-		container: 'rendering',
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-
-			var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-			var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-			var cube = new THREE.Mesh( geometry, material );
-			scene.add( cube );
-
-			camera.position.z = 5;
-
-			var animate = function () {
-				requestAnimationFrame( animate );
-
-				cube.rotation.x += 0.1;
-				cube.rotation.y += 0.1;
-
-				renderer.render(scene, camera);
-			};
-
-			animate();
-        </script>
-		
-		
-		
-	</body> -->
-<!-- </html> --> 
-
-<html lang="en"><head>
+<!--
+/*
+ * Copyright 2017 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <title>three.ar.js - Graffiti</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no,
@@ -117,7 +65,7 @@
 </head>
 <body>
 <div id="info">
-  <span class="title">Touch and hold to draw. Shake to undo.</span><br>
+  <span class="title">Touch and hold to draw. Shake to undo.</span><br/>
   <span class="links">
     <a href="https://github.com/google-ar/three.ar.js">three.ar.js</a> -
     <a href="https://developers.google.com/ar/develop/web/getting-started#examples">examples</a>
@@ -699,9 +647,6 @@ function onWindowResize () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-</script><div id="webgl-error-message" style="font-family: monospace; font-size: 13px; font-weight: normal; text-align: center; background: rgb(255, 255, 255); border: 1px solid black; color: rgb(0, 0, 0); padding: 1.5em; width: 400px; margin: 5em auto 0px;">This augmented reality experience requires
-  WebARonARCore or WebARonARKit, experimental browsers from Google
-  for Android and iOS. Learn more at the <a href="https://developers.google.com/ar/develop/web/getting-started">Google Developers site</a>.</div>
-
-
-</body></html>
+</script>
+</body>
+</html>
