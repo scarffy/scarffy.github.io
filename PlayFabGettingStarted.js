@@ -2,6 +2,11 @@ function DoExampleLoginWithCustomID(){
     PlayFab.settings.titleId = document.getElementById("titleId").value;
     var loginRequest = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        // Currently, you need to look up the correct format for this object in the API-docs:
+        // https://api.playfab.com/documentation/Client/method/LoginWithCustomID
+>>>>>>> dd3a8cb9cd3d94ef12947f6098e86abd0eba479f
 =======
         // Currently, you need to look up the correct format for this object in the API-docs:
         // https://api.playfab.com/documentation/Client/method/LoginWithCustomID
@@ -10,6 +15,7 @@ function DoExampleLoginWithCustomID(){
         CustomId: document.getElementById("customId").value,
         CreateAccount: true
     };
+<<<<<<< HEAD
 <<<<<<< HEAD
     PlayFabClientSDK.LoginWithCustomID(loginRequest, LoginCallBack);
 }
@@ -25,6 +31,8 @@ var LoginCallBack = function(result,error){
     }
 }
 =======
+=======
+>>>>>>> dd3a8cb9cd3d94ef12947f6098e86abd0eba479f
 
     PlayFabClientSDK.LoginWithCustomID(loginRequest, LoginCallback);
 }
@@ -39,4 +47,7 @@ var LoginCallback = function (result, error) {
             PlayFab.GenerateErrorReport(error);
     }
 }
+<<<<<<< HEAD
+>>>>>>> dd3a8cb9cd3d94ef12947f6098e86abd0eba479f
+=======
 >>>>>>> dd3a8cb9cd3d94ef12947f6098e86abd0eba479f
