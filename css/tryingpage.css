@@ -7,8 +7,9 @@
   }
   
   body {
-    background-image: url('images/bg-01.jpg') no-repeat;
+    background-image: url('images/bg-01.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Titillium Web', sans-serif;
   }
   
